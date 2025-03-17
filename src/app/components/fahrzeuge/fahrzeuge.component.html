@@ -1,0 +1,17 @@
+<div class="fahrzeuge-container">
+    <h2>Fahrzeuge & Raumschiffe</h2>
+    <div class="grid-container" *ngIf="vehiclesList.length > 0; else noResults">
+      <div class="grid-item" *ngFor="let vehicle of vehiclesList">
+        <h3>{{ vehicle.name }}</h3>
+        <p><strong>Modell:</strong> {{ vehicle.model }}</p>
+        <p><strong>Hersteller:</strong> {{ vehicle.manufacturer }}</p>
+        <p><strong>Ladekapazität:</strong> {{ vehicle.cargo_capacity }}</p>
+      </div>
+    </div>
+  
+    <!-- 🔹 Si no hay vehículos disponibles -->
+    <ng-template #noResults>
+      <p>Keine Fahrzeuge gefunden.</p>
+    </ng-template>
+  </div>
+  

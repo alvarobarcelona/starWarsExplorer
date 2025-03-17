@@ -1,0 +1,11 @@
+.footer-container{
+
+    display:flex;
+    justify-content: space-evenly;
+}
+button{
+    background-color: bisque;
+    padding: 8px;
+    border-radius: 15px;
+    width: 150px;
+}

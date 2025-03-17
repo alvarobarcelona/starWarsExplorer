@@ -1,0 +1,17 @@
+<div class="films-container">
+    <h2>Filme</h2>
+    <div class="grid-container" *ngIf="filmsList.length > 0; else noResults">
+      <div class="grid-item" *ngFor="let film of filmsList">
+        <h3>{{ film.title }}</h3>
+        <p><strong>Folge:</strong> {{ film.episode_id }}</p>
+        <p><strong>Director:</strong> {{ film.director }}</p>
+        <p><strong>Veröffentlichungsdatum:</strong> {{ film.release_date }}</p>
+      </div>
+    </div>
+  
+    <!-- Si no hay películas disponibles -->
+    <ng-template #noResults>
+      <p>No se encontraron películas.</p>
+    </ng-template>
+  </div>
+  

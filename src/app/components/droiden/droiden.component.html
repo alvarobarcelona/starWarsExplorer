@@ -1,0 +1,18 @@
+<div class="droiden-container">
+    <h2>Spezies</h2>
+    <div class="grid-container" *ngIf="filteredList.length > 0; else noResults">
+      <div class="grid-item" *ngFor="let droid of filteredList">
+
+        <p><b>{{ droid.name }}</b></p>
+        <p>Durchschnittliche Höhe: {{ droid.average_height }} cm</p>
+        <p>Lebenserwartung: {{ droid.average_lifespan }} Jahre</p>
+        <p>Sprache: {{ droid.language }}</p>
+      </div>
+    </div>
+  
+    <!-- Mensaje si no hay resultados -->
+    <ng-template #noResults>
+      <p>Droiden nicht gefunden.</p>
+    </ng-template>
+  </div>
+  

@@ -1,0 +1,16 @@
+<div class="planets-container">
+    <h2>Planeten</h2>
+    <div class="grid-container" *ngIf="planetsList.length > 0; else noResults">
+      <div class="grid-item" *ngFor="let planet of planetsList">
+        <h3>{{ planet.name }}</h3>
+        <p><strong>Klima:</strong> {{ planet.climate }}</p>
+        <p><strong>Gelände:</strong> {{ planet.terrain }}</p>
+        <p><strong>Bevölkerung:</strong> {{ planet.population }}</p>
+      </div>
+    </div>
+  
+    <ng-template #noResults>
+      <p>Keine Planeten gefunden.</p>
+    </ng-template>
+  </div>
+  

@@ -1,0 +1,21 @@
+<div class="menschen-container">
+ 
+  <!-- Grid de personajes -->
+  <div class="grid-container">
+    <div class="grid-item" *ngFor="let person of filteredList" (click)="selectPerson(person)">
+      <img [src]="getImageUrl(person.name)" alt="{{ person.name }}">
+      <!-- <img [src]="'/assets/pic/' + formatImageName(person.name)" alt="{{ person.name }}"> -->
+
+      <p>{{ person.name }}</p>
+    </div>
+  </div>
+</div>
+
+<div class=" details-container">
+   <div class="grid-container">
+        <div class="grid-item-detaisl">
+            <app-menschen-details *ngIf="selectedPerson" [person]="selectedPerson"></app-menschen-details>
+        </div>
+    </div>
+
+</div>
