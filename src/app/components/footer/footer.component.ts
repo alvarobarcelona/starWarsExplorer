@@ -5,7 +5,7 @@ import { ExportService } from '../../services/export.service';
   selector: 'app-footer',
   standalone: true,
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss']
+  styleUrls: ['./footer.component.css'],
 })
 export class FooterComponent {
   @Input() exportDataList: any[] = []; //Recibe datos desde el AppComponent
@@ -14,10 +14,10 @@ export class FooterComponent {
 
   exportData(format: string): void {
     if (!this.exportDataList || this.exportDataList.length === 0) {
-      alert('Nicht zu exportieren');
+      alert('Nothing to export');
       return;
     }
-  const filename = 'star_wars_data';
+    const filename = 'star_wars_data';
 
     if (format === 'json') {
       this.exportService.exportToJson(this.exportDataList, filename);

@@ -1,48 +1,94 @@
- body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #2d4c57;
-    color: rgb(13, 13, 13);
-    background-image: url("assets/pic/background-star-wars.jpg");
-  }
-  html, body {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  app-root {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-  
-/*   .main-container {
-    flex: 1; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-  } */
-  
+:root {
+  /* Star Wars Palette */
+  --space-black: #020202;
+  --star-yellow: #e9e768; /* Iconic Star Wars Yellow */
+  --holo-blue: #00e5ff; /* Hologram Blue */
+  --laser-red: #ff3b3b;
+  --rebel-white: #ffffff;
+  --rebel-gray: #4d4747;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --card-bg: rgba(20, 20, 20, 0.85);
 
-  .footer {
-    background: #222;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    width: 100%;
-    position: relative;
-    bottom: 0;
-    margin-top: auto;
-  }
-  
-  .footer-container {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 10px;
-  }
+  /* Spacing & Layout */
+  --border-radius: 12px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--space-black);
+  color: var(--rebel-gray);
+  background-image: url("assets/pic/background-star-wars.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+app-root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Global Card Style */
+.card-style {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: var(--border-radius);
+  color: var(--rebel-gray);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.card-style:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px var(--holo-blue);
+  border-color: var(--holo-blue);
+}
+
+.footer {
+  background: rgba(0, 0, 0, 0.9);
+  border-top: 1px solid var(--star-yellow);
+  color: var(--star-yellow);
+  text-align: center;
+  padding: 15px;
+  width: 100%;
+  position: relative;
+  bottom: 0;
+  margin-top: auto;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+/* Global Button Style */
+button {
+  background: transparent;
+  border: 1px solid var(--star-yellow);
+  color: var(--star-yellow);
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: var(--star-yellow);
+  color: var(--space-black);
+  box-shadow: 0 0 10px var(--star-yellow);
+}

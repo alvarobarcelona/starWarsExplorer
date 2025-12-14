@@ -1,37 +1,72 @@
 .sidebar {
-    width: 385px;
-    background: #f4f4f4; 
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  
-    h2 {
-      text-align: center;
-      font-size: 1.2rem;
-      margin-bottom: 15px;
-    }
-  
-    ul {
-      list-style: none;
-      font-size: larger;
-  
-      li {
-        margin: 10px 0;
+  width: 385px;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  color: var(--rebel-gray);
+
+  h2 {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: var(--holo-blue);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-bottom: 1px solid var(--holo-blue);
+    padding-bottom: 10px;
+  }
+
+  ul {
+    list-style: none;
+    font-size: larger;
+    padding: 0;
+
+    li {
+      margin: 15px 0;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 5px;
+      transition: transform 0.2s ease;
+
+      &:hover {
+        transform: translateX(10px);
+      }
+
+      input {
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        border: 2px solid var(--holo-blue);
+        border-radius: 4px;
+        background: transparent;
+        cursor: pointer;
+        position: relative;
         display: flex;
         align-items: center;
-        gap: 10px;
-  
-        input {
-          cursor: pointer;
-          transform: scale(1.5);
+        justify-content: center;
+        transition: all 0.2s ease;
+
+        &:checked {
+          background: var(--holo-blue);
+          box-shadow: 0 0 10px var(--holo-blue);
         }
-  
-        label {
-          font-size: 1rem;
-          cursor: pointer;
+
+        &:checked::after {
+          content: "✔";
+          font-size: 14px;
+          color: var(--space-black);
+          font-weight: bold;
         }
       }
+
+      label {
+        font-size: 1.1rem;
+        cursor: pointer;
+      }
     }
-
-
   }
+}

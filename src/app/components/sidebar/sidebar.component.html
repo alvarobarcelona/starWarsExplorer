@@ -1,9 +1,13 @@
 <aside class="sidebar">
-  <h2>Nach Kategorie filtern:</h2>
+  <h2>Filter by Category:</h2>
   <ul>
-    <li><input type="checkbox" (change)="selectFilter('menschen')"> Menschen</li>
-    <li><input type="checkbox" (change)="selectFilter('droiden')" > Droiden(Spezies)</li>
-    <li><input type="checkbox" (change)="selectFilter('filme')"> Filme</li>
-    <li><input type="checkbox" (change)="selectFilter('fahrzeuge')"> Fahrzeuge</li>
+    <li><input type="checkbox" (change)="selectFilter('people')" /> People</li>
+    <li>
+      <input type="checkbox" (change)="selectFilter('species')" /> Species
+    </li>
+    <li><input type="checkbox" (change)="selectFilter('films')" /> Films</li>
+    <li>
+      <input type="checkbox" (change)="selectFilter('vehicles')" /> Vehicles
+    </li>
   </ul>
 </aside>

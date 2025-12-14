@@ -1,46 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
+<app-navbar></app-navbar>
 
-  <app-navbar></app-navbar>
+<div class="container">
+  <router-outlet></router-outlet>
+  <!-- Aquí se cargarán los componentes dinámicamente -->
+</div>
 
-  <div class="container">
-    <router-outlet></router-outlet> <!-- Aquí se cargarán los componentes dinámicamente -->
-  </div>
+<app-search-bar (searchEvent)="onSearch($event)"></app-search-bar>
 
-  <app-search-bar (searchEvent)="onSearch($event)"></app-search-bar>
+<div class="main-container">
+  <app-sidebar (filterEvent)="onFilter($event)"></app-sidebar>
+</div>
 
+<div class="results-container">
+  <ng-container *ngIf="selectedFilters.includes('people')">
+    <app-people [searchQuery]="searchQuery"></app-people>
+  </ng-container>
 
-  <div class="main-container">
-    <app-sidebar (filterEvent)="onFilter($event)"></app-sidebar>
-  </div>
-  
+  <ng-container *ngIf="selectedFilters.includes('species')">
+    <app-species [searchQuery]="searchQuery"></app-species>
+  </ng-container>
 
-  <div class="results-container">
-    <ng-container *ngIf="selectedFilters.includes('menschen')">
-      <app-menschen [searchQuery]="searchQuery"></app-menschen>
-    </ng-container>
+  <ng-container *ngIf="selectedFilters.includes('vehicles')">
+    <app-vehicles [searchQuery]="searchQuery"></app-vehicles>
+  </ng-container>
 
-    <ng-container *ngIf="selectedFilters.includes('droiden')">
-      <app-droiden [searchQuery]="searchQuery"></app-droiden>
-    </ng-container>
+  <ng-container *ngIf="selectedFilters.includes('films')">
+    <app-films [searchQuery]="searchQuery"></app-films>
+  </ng-container>
+</div>
 
-    <ng-container *ngIf="selectedFilters.includes('fahrzeuge')">
-      <app-fahrzeuge [searchQuery]="searchQuery"></app-fahrzeuge>
-    </ng-container>
-
-    <ng-container *ngIf="selectedFilters.includes('filme')">
-      <app-films [searchQuery]="searchQuery"></app-films>
-    </ng-container>
-  </div>
-  
-  <app-footer [exportDataList]="getExportData()"></app-footer>
-
-
-</body>
-</html>
+<app-footer [exportDataList]="getExportData()"></app-footer>

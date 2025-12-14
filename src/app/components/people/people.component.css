@@ -1,0 +1,48 @@
+.people-container,
+.species-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  /* width: 90%; */
+  max-width: 1000px;
+  padding: 20px;
+  justify-content: center;
+
+  .grid-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 325px;
+    text-align: center;
+    padding: 15px;
+    /* Styles handled by .card-style: background, border-radius, box-shadow, transition */
+
+    &:hover {
+      /* Transform handled by .card-style, but scaling image/text specific can stay if needed,
+         though card-style hover effects usually suffice. keeping specific scale if desired or removing.
+         Global card-style scales the whole card. */
+    }
+
+    img {
+      max-width: 100%;
+      border-radius: 5px;
+      border: 2px solid var(--glass-border);
+    }
+
+    p {
+      font-size: 1.1rem;
+      margin: 15px 0 0;
+      color: var(--star-yellow);
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+  }
+}

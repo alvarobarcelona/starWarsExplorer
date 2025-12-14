@@ -1,0 +1,18 @@
+<div class="species-container">
+  <h2>Species</h2>
+  <div class="grid-container" *ngIf="filteredList.length > 0; else noResults">
+    <div class="grid-item card-style" *ngFor="let species of filteredList">
+      <p>
+        <b>{{ species.name }}</b>
+      </p>
+      <p>Average Height: {{ species.average_height }} cm</p>
+      <p>Average Lifespan: {{ species.average_lifespan }} years</p>
+      <p>Language: {{ species.language }}</p>
+    </div>
+  </div>
+
+  <!-- Mensaje si no hay resultados -->
+  <ng-template #noResults>
+    <p>Species not found.</p>
+  </ng-template>
+</div>

@@ -1,4 +1,4 @@
-.films-container {
+.species-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,17 +19,10 @@
     text-align: center;
     /* Styles handled by .card-style */
 
-    h3 {
-      margin-bottom: 10px;
-      font-size: 1.2rem;
-      color: var(--star-yellow);
-      text-transform: uppercase;
-    }
-
     p {
       font-size: 1rem;
-      margin: 5px 0;
-      color: var(--rebel-gray);
+      margin: 10px 0 0;
+      color: var(--star-yellow);
     }
   }
 }
